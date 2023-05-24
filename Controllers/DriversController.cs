@@ -72,6 +72,22 @@ public class DriversController : ControllerBase
            
     }
 
+    [HttpPatch("UpdateDriver")]
+    public IActionResult UpdateDriver(Driver driver)
+    {
+        var existDriver = _drivers.FirstOrDefault(x => x.Id == driver.Id);
+
+        if (existDriver == null)
+
+            return NotFound();
+
+        existDriver.Name = driver.Name;
+        existDriver.Team = driver.Team;
+        existDriver.DriverNumber = driver.DriverNumber;
+
+        return NoContent();
+    }
+
 
 }
 
