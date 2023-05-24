@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using MyBaseNet7Code.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<ApiDbContext>(optionsAction: options => options.UseSqlite(builder.Configuration.GetConnectionString(name:"DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
