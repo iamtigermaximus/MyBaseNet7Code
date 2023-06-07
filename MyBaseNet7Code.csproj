@@ -25,9 +25,13 @@
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Data\" />
+    <None Remove="Core\" />
+    <None Remove="Core\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Data\" />
+    <Folder Include="Core\" />
+    <Folder Include="Core\Repositories\" />
   </ItemGroup>
 </Project>
